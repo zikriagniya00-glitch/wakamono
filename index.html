@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WAKAMONO - Kreasi Sederhana Untuk Yang Teristimewa</title>
-    <!-- Tailwind CSS CDN -->
+    <title>WAKAMONO - Bola Keju Kentang</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
@@ -19,14 +17,14 @@
                 extend: {
                     colors: {
                         brand: {
-                            coral: '#E86A6A',
-                            coralHover: '#D55555',
-                            cream: '#FDF6ED',
-                            offwhite: '#F7F5F0',
-                            dark: '#222222',
-                            slate: '#333333',
+                            coral: '#D97706',
+                            coralHover: '#B45309',
+                            cream: '#FFF8E9',
+                            offwhite: '#FFFDF7',
+                            dark: '#3E230C',
+                            slate: '#5C4632',
                             muted: '#777777',
-                            softBorder: '#EADECE'
+                            softBorder: '#F0D39A'
                         }
                     },
                     fontFamily: {
@@ -37,423 +35,469 @@
             }
         }
     </script>
+
     <style>
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
-            background: #F7F5F0;
+            background: #fff8e9;
         }
+
         ::-webkit-scrollbar-thumb {
-            background: #E86A6A;
+            background: #d97706;
             border-radius: 4px;
         }
+
         .logo {
             border-radius: 15px;
         }
+
         .glass-nav {
-            background: rgba(253, 246, 237, 0.92);
+            background: rgba(255, 248, 233, 0.92);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
+
+        /* Background hero */
         .hero-gradient {
-            background: linear-gradient(135deg, rgba(34,34,34,0.85) 0%, rgba(45,40,38,0.7) 100%), url('https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&q=80&w=1920') center/cover no-repeat;
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(45, 27, 12, 0.88),
+                    rgba(128, 75, 25, 0.50)
+                ),
+                url('https://media.istockphoto.com/id/2289804860/id/foto/bola-keju-goreng-renyah-dengan-remah-roti-di-piring-putih.webp?a=1&b=1&s=612x612&w=0&k=20&c=wJ9PC-68kMPvLneC66JwhZdnOZkwivbgIfHloaelbKc=')
+                center / cover no-repeat;
+        }
+
+        /* Background bagian website */
+        .food-pattern {
+            background-color: #fff8e9;
+            background-image:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(234, 179, 8, 0.15) 0 3px,
+                    transparent 4px
+                ),
+                radial-gradient(
+                    circle at 85% 75%,
+                    rgba(180, 83, 9, 0.12) 0 4px,
+                    transparent 5px
+                ),
+                linear-gradient(135deg, #fffdf7, #ffedc2);
+            background-size: 42px 42px, 58px 58px, auto;
+        }
+
+        /* Kartu produk */
+        .product-card {
+            background: linear-gradient(180deg, #fffdf7, #fff0cc);
+            border: 1px solid #f0d39a;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(120, 75, 20, 0.08);
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(120, 75, 20, 0.16);
+        }
+
+        /* Banner promosi */
+        .cheese-banner {
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(62, 35, 12, 0.95),
+                    rgba(160, 94, 25, 0.85)
+                ),
+                url('https://media.istockphoto.com/id/1292183485/id/foto/bola-kentang-bola-keju.webp?sa=1&b=1&s=612x612&w=0&k=20&c=vvO4OFTbizcS6MHNjMaaUMWZSQQwBSSz4P5NVntWKjc=')
+                center / cover no-repeat;
+            color: white;
+            border-radius: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-gradient {
+                background-position: center;
+            }
         }
     </style>
 </head>
+
 <body class="bg-brand-cream text-brand-slate font-sans antialiased overflow-x-hidden">
 
     <!-- NAVIGATION BAR -->
-    <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300 border-b border-brand-softBorder" id="navbar">
+    <header id="navbar"
+        class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-brand-softBorder">
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Brand Logo & Name (Using exact SVG Silhouette from Uploaded Image) -->
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="kontainer-gambar">
-                            <img src="logo.jpeg"  width="100px" height="200px" class="logo">
-                        <!-- WAKAMONO 3-Person Silhouette SVG Logo -->
-                    </div>
+
+                <a href="#beranda" class="flex items-center gap-3">
+                    <img src="logo.jpeg" width="60" alt="Logo WAKAMONO"
+                        class="logo">
+
                     <div class="flex flex-col">
-                        <span class="font-bold text-2xl text-brand-dark tracking-[0.2em] font-sans">WAKAMONO</span>
-                        <span class="text-[9px] tracking-wider uppercase font-semibold text-brand-coral">F&B Premium Drink</span>
+                        <span class="font-bold text-2xl tracking-widest text-brand-dark">
+                            WAKAMONO
+                        </span>
+                        <span class="text-[9px] tracking-wider uppercase font-semibold text-brand-coral">
+                            Potato Cheese Balls
+                        </span>
                     </div>
                 </a>
 
-                <!-- Desktop Navigation Menu -->
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a href="#beranda" class="text-sm font-medium hover:text-brand-coral transition-colors py-2">Beranda</a>
-                    <a href="#tentang" class="text-sm font-medium hover:text-brand-coral transition-colors py-2">Tentang Kami</a>
-                    <a href="#produk" class="text-sm font-medium hover:text-brand-coral transition-colors py-2">Produk</a>
-                    <a href="#pemesanan" class="text-sm font-medium hover:text-brand-coral transition-colors py-2">Kalkulator Pesan</a>
-                    <a href="#tim" class="text-sm font-medium hover:text-brand-coral transition-colors py-2">Tim Kami</a>
-                    <a href="#kontak" class="text-sm font-medium hover:text-brand-coral transition-colors py-2">Kontak</a>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#beranda" class="text-sm hover:text-brand-coral">Beranda</a>
+                    <a href="#tentang" class="text-sm hover:text-brand-coral">Tentang Kami</a>
+                    <a href="#produk" class="text-sm hover:text-brand-coral">Produk</a>
+                    <a href="#tim" class="text-sm hover:text-brand-coral">Tim Kami</a>
+                    <a href="#kontak" class="text-sm hover:text-brand-coral">Kontak</a>
                 </nav>
 
-                <!-- Desktop CTA Buttons -->
-                <div class="hidden md:flex items-center space-x-4">
-                    <a href="#pemesanan" class="px-5 py-2.5 text-sm font-semibold text-white bg-brand-coral rounded-full hover:bg-brand-coralHover transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
-                        Pesan via WA
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-brand-slate hover:text-brand-coral focus:outline-none">
+                <button id="mobile-menu-btn"
+                    class="md:hidden p-2 rounded-lg text-brand-dark"
+                    aria-label="Buka menu">
                     <i data-lucide="menu" class="w-7 h-7"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Navigation Drawer -->
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-cream border-b border-brand-softBorder px-4 pt-2 pb-6 space-y-3 shadow-xl">
-            <a href="#beranda" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-brand-dark hover:bg-orange-100/50">Beranda</a>
-            <a href="#tentang" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-brand-dark hover:bg-orange-100/50">Tentang Kami</a>
-            <a href="#produk" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-brand-dark hover:bg-orange-100/50">Produk</a>
-            <a href="#pemesanan" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-brand-dark hover:bg-orange-100/50">Kalkulator Pesan</a>
-            <a href="#tim" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-brand-dark hover:bg-orange-100/50">Tim Kami</a>
-            <a href="#kontak" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-brand-dark hover:bg-orange-100/50">Kontak</a>
-            <div class="pt-2">
-                <a href="#pemesanan" class="mobile-link block w-full py-3 text-center font-semibold text-white bg-brand-coral rounded-xl shadow-md">Pesan via WA</a>
-            </div>
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-brand-cream border-b border-brand-softBorder px-4 pt-2 pb-6 space-y-3">
+
+            <a href="#beranda" class="mobile-link block py-2">Beranda</a>
+            <a href="#tentang" class="mobile-link block py-2">Tentang Kami</a>
+            <a href="#produk" class="mobile-link block py-2">Produk</a>
+            <a href="#pemesanan" class="mobile-link block py-2">Pemesanan</a>
+            <a href="#tim" class="mobile-link block py-2">Tim Kami</a>
+            <a href="#kontak" class="mobile-link block py-2">Kontak</a>
         </div>
     </header>
 
+
     <!-- HERO SECTION -->
-    <section id="beranda" class="relative min-h-screen hero-gradient flex items-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div class="max-w-7xl mx-auto w-full grid md:grid-cols-12 gap-12 items-center">
-            <div class="md:col-span-7 space-y-8 text-white z-10">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-brand-cream text-xs sm:text-sm font-semibold tracking-wide">
-                    <i data-lucide="sparkles" class="w-4 h-4 text-brand-coral"></i> Berdiri Sejak 16 Oktober 2026
+    <section id="beranda"
+        class="relative min-h-screen hero-gradient flex items-center pt-28 pb-16 px-4 sm:px-6 lg:px-8">
+
+        <div class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
+
+            <div class="space-y-7 text-white">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-sm">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                    Camilan Lezat dan Mengenyangkan
                 </div>
+
                 <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                    WAKAMONO<br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 via-amber-100 to-brand-coral">"Kreasi sederhana untuk yang teristimewa"</span>
+                    WAKAMONO
+                    <span class="block text-amber-200">
+                        Bola Keju Kentang
+                    </span>
                 </h1>
-                <p class="text-stone-200 text-base sm:text-lg max-w-2xl font-light leading-relaxed">
-                    Nikmati kesegaran istimewa dari perpaduan sempurna susu premium, jelly kenyal berkualitas, dan sentuhan topping keju yang kaya rasa.
+
+                <p class="text-stone-200 text-base sm:text-lg leading-relaxed">
+                    Nikmati camilan bola kentang dengan tekstur renyah di luar,
+                    lembut di dalam, dan isian keju yang gurih serta meleleh.
+                    Cocok menemani waktu santai bersama keluarga dan teman.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                    <a href="#pemesanan" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-brand-coral hover:bg-brand-coralHover text-white font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                        <span>Pesan Sekarang</span>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#pemesanan"
+                        class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-brand-coral hover:bg-brand-coralHover text-white font-semibold rounded-full">
+                        Pesan Sekarang
                         <i data-lucide="shopping-bag" class="w-5 h-5"></i>
                     </a>
-                    <a href="#produk" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/30 font-semibold rounded-full backdrop-blur-sm transition-all duration-300">
-                        <span>Lihat Menu Jelly Susu</span>
+
+                    <a href="#produk"
+                        class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/30 rounded-full">
+                        Lihat Produk
                         <i data-lucide="arrow-down" class="w-5 h-5"></i>
                     </a>
                 </div>
-                
-                <!-- Quick Info Badges -->
-                <div class="grid grid-cols-3 gap-4 pt-8 border-t border-white/10 text-center sm:text-left">
+
+                <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/20 text-center">
                     <div>
-                        <p class="text-2xl font-bold text-amber-200">100%</p>
-                        <p class="text-xs text-stone-300">Susu Segar & Hygiene</p>
+                        <p class="text-xl font-bold text-amber-200">Fresh</p>
+                        <p class="text-xs text-stone-200">Dibuat Segar</p>
                     </div>
                     <div>
-                        <p class="text-2xl font-bold text-amber-200">Fresh</p>
-                        <p class="text-xs text-stone-300">Dibuat Setiap Hari</p>
+                        <p class="text-xl font-bold text-amber-200">Gurih</p>
+                        <p class="text-xs text-stone-200">Rasa Keju</p>
                     </div>
                     <div>
-                        <p class="text-2xl font-bold text-amber-200">Terjangkau</p>
-                        <p class="text-xs text-stone-300">Kualitas Premium</p>
+                        <p class="text-xl font-bold text-amber-200">Lezat</p>
+                        <p class="text-xs text-stone-200">Teman Santai</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Visual Card / Display -->
-            <div class="md:col-span-5 relative hidden md:block">
-                <div class="relative z-10 w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10 transform rotate-1 hover:rotate-0 transition-transform duration-500">
-                    <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&q=80&w=800" alt="Wakamono Milk Drink" class="w-full h-[450px] object-cover">
-                </div>
-                <div class="absolute -bottom-6 -left-6 z-20 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-4 border border-stone-100 max-w-xs">
-                    <div class="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center text-brand-coral">
-                        <i data-lucide="heart" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-brand-dark">WAKAMONO Drink</p>
-                        <p class="text-[10px] text-stone-500">Kreasi Sederhana Yang Teristimewa</p>
-                    </div>
+            <div class="hidden md:block">
+                <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20">
+                    <img
+                        src="https://images.unsplash.com/photo-1658931732448-653eb6264cfe?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
+                        alt="Kentang untuk camilan"
+                        class="w-full h-[450px] object-cover">
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- TENTANG KAMI (ABOUT US & VISI MISI) -->
-    <section id="tentang" class="py-24 bg-brand-offwhite relative">
+
+    <!-- TENTANG KAMI -->
+    <section id="tentang" class="py-24 food-pattern relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                
-                <!-- Logo Display & Branding Info -->
-                <div class="flex flex-col items-center justify-center p-8 bg-brand-cream rounded-3xl border border-brand-softBorder shadow-sm relative">
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+
+                <div class="flex flex-col items-center justify-center p-8 bg-white/80 rounded-3xl border border-brand-softBorder shadow-sm">
                     <div class="w-40 h-40 bg-white rounded-2xl p-4 shadow-md flex items-center justify-center mb-6">
-                        <img src="logo.jpeg" class="logo">
+                        <img src="logo.jpeg" alt="Logo WAKAMONO"
+                            class="logo max-w-full max-h-full object-contain">
                     </div>
-                    <h3 class="font-bold text-2xl tracking-[0.25em] text-brand-dark mb-1">WAKAMONO</h3>
-                    <p class="text-xs text-brand-coral uppercase font-bold tracking-widest mb-4">Food & Beverage Enterprise</p>
-                    <p class="text-xs text-stone-500 text-center max-w-sm">
-                        Resmi didirikan pada <strong>16 Oktober 2026</strong> dengan semangat menyajikan minuman segar berkualitas tinggi untuk seluruh kalangan.
+
+                    <h3 class="font-bold text-2xl tracking-widest text-brand-dark mb-2">
+                        WAKAMONO
+                    </h3>
+
+                    <p class="text-xs text-brand-coral uppercase font-bold tracking-widest mb-4">
+                        Potato Cheese Balls
+                    </p>
+
+                    <p class="text-sm text-stone-600 text-center max-w-sm">
+                        WAKAMONO menghadirkan camilan bola keju kentang yang
+                        lezat, praktis, dan cocok dinikmati kapan saja.
                     </p>
                 </div>
 
-                <!-- Content -->
                 <div class="space-y-6">
                     <div class="inline-flex items-center gap-2 text-brand-coral font-semibold text-sm uppercase tracking-wider">
-                        <i data-lucide="info" class="w-4 h-4"></i> Tentang WAKAMONO
-                    </div>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-dark leading-tight">
-                        Menghadirkan Kesegaran Minuman Jelly Susu Pilihan
-                    </h2>
-                    <p class="text-brand-slate leading-relaxed text-sm sm:text-base">
-                        <strong>WAKAMONO</strong> hadir sebagai pelopor minuman Jelly Susu kekinian yang memadukan rasa manis lembut susu dengan tekstur kenyal jelly pilihan dan kenikmatan gurih keju parut.
-                    </p>
-                    
-                    <!-- Visi & Misi Box -->
-                    <div class="space-y-4 pt-2">
-                        <div class="p-5 rounded-2xl bg-white border border-brand-softBorder shadow-sm">
-                            <h4 class="font-bold text-brand-coral flex items-center gap-2 mb-1">
-                                <i data-lucide="compass" class="w-5 h-5"></i> Visi Kami
-                            </h4>
-                            <p class="text-xs sm:text-sm text-stone-600">Menjadi brand minuman pilihan utama bagi generasi muda dan masyarakat umum yang mengutamakan cita rasa autentik, kebersihan, dan keistimewaan dalam setiap tegukan.</p>
-                        </div>
-                        <div class="p-5 rounded-2xl bg-white border border-brand-softBorder shadow-sm">
-                            <h4 class="font-bold text-brand-dark flex items-center gap-2 mb-1">
-                                <i data-lucide="target" class="w-5 h-5 text-brand-coral"></i> Misi Kami
-                            </h4>
-                            <ul class="text-xs sm:text-sm text-stone-600 list-disc list-inside space-y-1">
-                                <li>Menggunakan bahan-bahan susu dan jelly berkualitas tinggi & higienis.</li>
-                                <li>Memberikan pelayanan terbaik dan respon cepat bagi pelanggan.</li>
-                                <li>Menghadirkan kebahagiaan melalui racikan minuman teristimewa.</li>
-                            </ul>
-                        </div>
+                        <i data-lucide="info" class="w-4 h-4"></i>
+                        Tentang WAKAMONO
                     </div>
 
-                    <!-- Target Pasar -->
-                    <div class="p-4 rounded-xl bg-orange-100/50 border border-orange-200">
-                        <p class="text-xs font-semibold text-brand-dark flex items-center gap-2">
-                            <i data-lucide="users" class="w-4 h-4 text-brand-coral"></i> Target Pasar: Pelajar, Mahasiswa, Pekerja Muda, & Pecinta Minuman Manis Segar.
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">
+                        Camilan Sederhana dengan Rasa Istimewa
+                    </h2>
+
+                    <p class="leading-relaxed text-sm sm:text-base">
+                        WAKAMONO merupakan usaha kuliner yang menawarkan
+                        bola keju kentang dengan perpaduan kentang lembut
+                        dan keju gurih. Produk dibuat dengan memperhatikan
+                        cita rasa, kebersihan, dan kualitas bahan.
+                    </p>
+
+                    <div class="p-5 rounded-2xl bg-white/90 border border-brand-softBorder">
+                        <h4 class="font-bold text-brand-coral flex items-center gap-2 mb-2">
+                            <i data-lucide="compass" class="w-5 h-5"></i>
+                            Visi Kami
+                        </h4>
+                        <p class="text-sm text-stone-600">
+                            Menjadi pilihan camilan favorit dengan rasa lezat,
+                            kualitas baik, dan harga yang terjangkau.
                         </p>
                     </div>
+
+                    <div class="p-5 rounded-2xl bg-white/90 border border-brand-softBorder">
+                        <h4 class="font-bold text-brand-dark flex items-center gap-2 mb-2">
+                            <i data-lucide="target" class="w-5 h-5 text-brand-coral"></i>
+                            Misi Kami
+                        </h4>
+
+                        <ul class="text-sm text-stone-600 list-disc list-inside space-y-2">
+                            <li>Menggunakan bahan baku yang berkualitas.</li>
+                            <li>Menjaga kebersihan dalam proses produksi.</li>
+                            <li>Menyediakan camilan dengan rasa yang konsisten.</li>
+                            <li>Memberikan pelayanan yang ramah kepada pelanggan.</li>
+                        </ul>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- PRODUK WAKAMONO -->
-    <section id="produk" class="py-24 bg-white">
+
+<!-- PRODUK WAKAMONO: SATU KARTU HORIZONTAL -->
+<section id="produk" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Judul Produk -->
+        <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+            <span class="text-brand-coral font-semibold text-sm uppercase tracking-wider">
+                Produk Unggulan
+            </span>
+
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">
+                Bola Keju Kentang WAKAMONO
+            </h2>
+
+            <p class="text-stone-600 text-sm sm:text-base">
+                Perpaduan kentang lembut, keju gurih yang lumer,
+                dan lapisan luar yang renyah.
+            </p>
+        </div>
+
+        <!-- Kartu Produk Besar Horizontal -->
+        <div class="product-card flex flex-col md:flex-row overflow-hidden
+                    rounded-3xl border border-brand-softBorder
+                    bg-brand-cream shadow-lg hover:shadow-2xl
+                    transition-shadow duration-300">
+
+            <!-- Foto Produk -->
+            <div class="md:w-1/2 w-full min-h-[280px] md:min-h-[430px]
+                        overflow-hidden bg-stone-100">
+
+                <img
+                    src="foto-bola-keju.jpg"
+                    alt="Bola Keju Kentang Original dengan keju lumer"
+                    class="w-full h-full min-h-[280px] md:min-h-[430px] object-cover"
+                >
+
+            </div>
+
+            <!-- Informasi Produk -->
+            <div class="md:w-1/2 w-full p-7 sm:p-10 lg:p-14
+                        flex flex-col justify-center gap-5">
+
+                <span class="inline-flex self-start bg-brand-dark text-white
+                             text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">
+                    Favorite
+                </span>
+
+                <h3 class="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">
+                    Bola Keju Kentang Original
+                </h3>
+
+                <p class="text-brand-coral text-2xl font-bold">
+                    Rp 5.000
+                    <span class="text-sm font-medium text-stone-500">
+                        / porsi
+                    </span>
+                </p>
+
+                <p class="text-stone-600 leading-relaxed">
+                    Bola kentang keemasan yang renyah di luar dan lembut
+                    di dalam, dengan isian keju gurih yang meleleh saat
+                    dibelah. Cocok untuk camilan bersama teman dan keluarga.
+                </p>
+
+                <!-- Keunggulan Produk -->
+                <ul class="space-y-2 text-sm text-stone-600">
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle"
+                           class="w-5 h-5 text-brand-coral"></i>
+                        Rasa keju gurih dan lumer
+                    </li>
+
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle"
+                           class="w-5 h-5 text-brand-coral"></i>
+                        Bagian luar renyah, bagian dalam lembut
+                    </li>
+
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle"
+                           class="w-5 h-5 text-brand-coral"></i>
+                        Cocok untuk menemani waktu santai
+                    </li>
+                </ul>
+
+                <!-- Tombol WhatsApp -->
+                <a
+                    href="https://wa.me/62882018675918?text=Halo%20WAKAMONO%2C%20saya%20ingin%20memesan%20Bola%20Keju%20Kentang%20Original"
+                    target="_blank"
+                    rel="noopener"
+                    class="inline-flex self-start items-center justify-center
+                           gap-2 px-7 py-3.5 bg-brand-coral
+                           hover:bg-brand-coralHover text-white
+                           font-semibold rounded-full shadow-md transition-all">
+
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    Pesan via WhatsApp
+                </a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- TIM KAMI -->
+    <section id="tim" class="py-24 food-pattern">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <span class="text-brand-coral font-semibold text-sm uppercase tracking-wider">Varian Produk</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">Menu Istimewa WAKAMONO</h2>
-                <p class="text-stone-600 text-sm sm:text-base">Dibuat segar setiap hari dengan kombinasi susu bernutrisi dan tekstur jelly favorit Anda.</p>
-            </div>
 
-            <!-- Product Cards Grid -->
-            <div class="grid md:grid-cols-3 gap-8">
-                
-                <!-- Product 1 -->
-                <div class="bg-brand-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-brand-softBorder group flex flex-col justify-between">
-                    <div>
-                        <div class="relative overflow-hidden h-60 bg-stone-100">
-                            <img src="https://images.unsplash.com/photo-1556881286-fc6915169721?auto=format&fit=crop&q=80&w=600" alt="Original Jelly Susu" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            <span class="absolute top-4 left-4 bg-brand-dark text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Favorite</span>
-                        </div>
-                        <div class="p-6 space-y-3">
-                            <div class="flex justify-between items-start">
-                                <h3 class="font-bold text-xl text-brand-dark">Original Jelly Susu</h3>
-                                <span class="text-brand-coral font-bold text-lg">Rp 8.000</span>
-                            </div>
-                            <p class="text-stone-600 text-xs sm:text-sm leading-relaxed">
-                                Sediaan rasa lembut susu murni manis segar dipadukan dengan jelly kenyal original khas Wakamono.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <a href="#pemesanan" class="w-full py-3 bg-white text-brand-dark font-semibold text-xs rounded-xl border border-stone-200 hover:bg-brand-coral hover:text-white hover:border-brand-coral transition-colors flex items-center justify-center gap-2">
-                            <i data-lucide="plus" class="w-4 h-4"></i> Tambah ke Kalkulator
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="bg-brand-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-brand-softBorder group flex flex-col justify-between">
-                    <div>
-                        <div class="relative overflow-hidden h-60 bg-stone-100">
-                            <img src="https://images.unsplash.com/photo-1546173159-315724a31696?auto=format&fit=crop&q=80&w=600" alt="Mangga Jelly Susu" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            <span class="absolute top-4 left-4 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Fruity Best</span>
-                        </div>
-                        <div class="p-6 space-y-3">
-                            <div class="flex justify-between items-start">
-                                <h3 class="font-bold text-xl text-brand-dark">Mangga Jelly Susu</h3>
-                                <span class="text-brand-coral font-bold text-lg">Rp 10.000</span>
-                            </div>
-                            <p class="text-stone-600 text-xs sm:text-sm leading-relaxed">
-                                Sensasi buah mangga manis yang segar menyatu harmoni dengan kelembutan susu dan potongan jelly harum.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <a href="#pemesanan" class="w-full py-3 bg-white text-brand-dark font-semibold text-xs rounded-xl border border-stone-200 hover:bg-brand-coral hover:text-white hover:border-brand-coral transition-colors flex items-center justify-center gap-2">
-                            <i data-lucide="plus" class="w-4 h-4"></i> Tambah ke Kalkulator
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Topping Extra -->
-                <div class="bg-brand-cream rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-brand-softBorder group flex flex-col justify-between">
-                    <div>
-                        <div class="relative overflow-hidden h-60 bg-stone-100">
-                            <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&q=80&w=600" alt="Topping Keju Parut" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                            <span class="absolute top-4 left-4 bg-brand-coral text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Extra Topping</span>
-                        </div>
-                        <div class="p-6 space-y-3">
-                            <div class="flex justify-between items-start">
-                                <h3 class="font-bold text-xl text-brand-dark">Topping Keju Parut</h3>
-                                <span class="text-brand-coral font-bold text-lg">+ Rp 2.000</span>
-                            </div>
-                            <p class="text-stone-600 text-xs sm:text-sm leading-relaxed">
-                                Taburan melimpah keju parut gurih berkualitas di atas minuman favorit Anda untuk kenikmatan maksimal.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="p-6 pt-0">
-                        <a href="#pemesanan" class="w-full py-3 bg-white text-brand-dark font-semibold text-xs rounded-xl border border-stone-200 hover:bg-brand-coral hover:text-white hover:border-brand-coral transition-colors flex items-center justify-center gap-2">
-                            <i data-lucide="plus" class="w-4 h-4"></i> Tambah ke Kalkulator
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- KALKULATOR PEMESANAN INTERAKTIF WHATSAPP -->
-    <section id="pemesanan" class="py-24 bg-brand-offwhite border-t border-brand-softBorder">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12 space-y-3">
-                <span class="text-brand-coral font-semibold text-sm uppercase tracking-wider">Order Online</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">Kalkulator Pemesanan Direct WA</h2>
-                <p class="text-stone-600 text-sm">Hitung pesanan Anda dan langsung hubungi WhatsApp resmi WAKAMONO dengan satu klik.</p>
-            </div>
-
-            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-brand-softBorder">
-                <form id="orderForm" onsubmit="sendWhatsAppOrder(event)" class="space-y-6">
-                    
-                    <!-- Data Pemesan -->
-                    <div class="grid sm:grid-cols-2 gap-4 pb-4 border-b border-stone-100">
-                        <div>
-                            <label class="block text-xs font-semibold text-stone-600 mb-1">Nama Pemesan *</label>
-                            <input type="text" id="custName" required placeholder="Contoh: Kak Budi" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-brand-coral text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-stone-600 mb-1">Alamat / Lokasi Pengiriman *</label>
-                            <input type="text" id="custAddress" required placeholder="Contoh: Gedung A / Ruko No 12" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-brand-coral text-sm">
-                        </div>
-                    </div>
-
-                    <!-- Item Quantities -->
-                    <div class="space-y-4">
-                        <h4 class="font-bold text-brand-dark text-sm">Pilih Jumlah Pesanan:</h4>
-
-                        <!-- Item 1 -->
-                        <div class="flex items-center justify-between p-4 rounded-2xl bg-brand-cream border border-brand-softBorder">
-                            <div>
-                                <h5 class="font-bold text-sm text-brand-dark">Original Jelly Susu</h5>
-                                <p class="text-xs text-brand-coral font-semibold">Rp 8.000 / cup</p>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <button type="button" onclick="updateQty('item1', -1)" class="w-8 h-8 rounded-lg bg-white border border-stone-300 font-bold hover:bg-stone-100 text-brand-dark flex items-center justify-center">-</button>
-                                <span id="qty-item1" class="font-bold text-sm w-6 text-center">0</span>
-                                <button type="button" onclick="updateQty('item1', 1)" class="w-8 h-8 rounded-lg bg-white border border-stone-300 font-bold hover:bg-stone-100 text-brand-dark flex items-center justify-center">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Item 2 -->
-                        <div class="flex items-center justify-between p-4 rounded-2xl bg-brand-cream border border-brand-softBorder">
-                            <div>
-                                <h5 class="font-bold text-sm text-brand-dark">Mangga Jelly Susu</h5>
-                                <p class="text-xs text-brand-coral font-semibold">Rp 10.000 / cup</p>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <button type="button" onclick="updateQty('item2', -1)" class="w-8 h-8 rounded-lg bg-white border border-stone-300 font-bold hover:bg-stone-100 text-brand-dark flex items-center justify-center">-</button>
-                                <span id="qty-item2" class="font-bold text-sm w-6 text-center">0</span>
-                                <button type="button" onclick="updateQty('item2', 1)" class="w-8 h-8 rounded-lg bg-white border border-stone-300 font-bold hover:bg-stone-100 text-brand-dark flex items-center justify-center">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Item 3 Topping -->
-                        <div class="flex items-center justify-between p-4 rounded-2xl bg-brand-cream border border-brand-softBorder">
-                            <div>
-                                <h5 class="font-bold text-sm text-brand-dark">Topping Keju Parut</h5>
-                                <p class="text-xs text-brand-coral font-semibold">Rp 2.000 / porsi</p>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <button type="button" onclick="updateQty('item3', -1)" class="w-8 h-8 rounded-lg bg-white border border-stone-300 font-bold hover:bg-stone-100 text-brand-dark flex items-center justify-center">-</button>
-                                <span id="qty-item3" class="font-bold text-sm w-6 text-center">0</span>
-                                <button type="button" onclick="updateQty('item3', 1)" class="w-8 h-8 rounded-lg bg-white border border-stone-300 font-bold hover:bg-stone-100 text-brand-dark flex items-center justify-center">+</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Total Price Display -->
-                    <div class="pt-4 border-t border-stone-200 flex items-center justify-between">
-                        <div>
-                            <p class="text-xs text-stone-500">Total Estimasi Pembayaran:</p>
-                            <p id="totalPrice" class="text-2xl font-bold text-brand-coral">Rp 0</p>
-                        </div>
-                        <button type="submit" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm rounded-2xl shadow-lg transition-all duration-300 flex items-center gap-2">
-                            <i data-lucide="message-circle" class="w-5 h-5"></i>
-                            <span>Kirim Order ke WhatsApp</span>
-                        </button>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- TIM KAMI (OUR TEAM) -->
-    <section id="tim" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-                <span class="text-brand-coral font-semibold text-sm uppercase tracking-wider">Struktur Organisasi</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">Tim Di Balik WAKAMONO</h2>
-                <p class="text-stone-600 text-sm">Sosok-sosok berdedikasi yang menghadirkan inovasi minuman terbaik untuk Anda.</p>
+                <span class="text-brand-coral font-semibold text-sm uppercase tracking-wider">
+                    Struktur Organisasi
+                </span>
+
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brand-dark">
+                    Tim Di Balik WAKAMONO
+                </h2>
+
+                <p class="text-stone-600 text-sm">
+                    Tim yang bekerja sama menghadirkan produk berkualitas.
+                </p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                
-                <!-- Founder & Leader -->
-                <div class="bg-brand-cream p-8 rounded-3xl border border-brand-softBorder text-center hover:shadow-lg transition-shadow">
-                    <div class="w-24 h-24 rounded-full bg-brand-dark text-white mx-auto flex items-center justify-center font-bold text-2xl mb-4 shadow-md">
+
+                <div class="product-card p-8 text-center">
+                    <div class="w-24 h-24 rounded-full bg-brand-dark text-white mx-auto flex items-center justify-center font-bold text-2xl mb-4">
                         AZ
                     </div>
-                    <h3 class="font-bold text-lg text-brand-dark">Abu Zikri Agnia Ilman</h3>
-                    <p class="text-xs font-bold text-brand-coral uppercase tracking-wider mt-1 mb-3">Founder / Leader</p>
-                    <p class="text-xs text-stone-500 leading-relaxed">
-                        Memimpin arah strategis, visi pengembangan produk, serta menjaga kualitas tertinggi dari WAKAMONO.
+
+                    <h3 class="font-bold text-lg text-brand-dark">
+                        Abu Zikri Agnia Ilman
+                    </h3>
+
+                    <p class="text-xs font-bold text-brand-coral uppercase mt-1 mb-3">
+                        Founder / Leader
+                    </p>
+
+                    <p class="text-sm text-stone-500">
+                        Mengelola arah usaha, pengembangan produk, dan kualitas.
                     </p>
                 </div>
 
-                <!-- Finance -->
-                <div class="bg-brand-cream p-8 rounded-3xl border border-brand-softBorder text-center hover:shadow-lg transition-shadow">
-                    <div class="w-24 h-24 rounded-full bg-brand-coral text-white mx-auto flex items-center justify-center font-bold text-2xl mb-4 shadow-md">
+                <div class="product-card p-8 text-center">
+                    <div class="w-24 h-24 rounded-full bg-brand-coral text-white mx-auto flex items-center justify-center font-bold text-2xl mb-4">
                         SR
                     </div>
-                    <h3 class="font-bold text-lg text-brand-dark">Syahrul Ramadhan</h3>
-                    <p class="text-xs font-bold text-brand-coral uppercase tracking-wider mt-1 mb-3">Finance / Keuangan</p>
-                    <p class="text-xs text-stone-500 leading-relaxed">
-                        Mengelola perencanaan finansial, efisiensi operasional, dan penetapan harga yang kompetitif.
+
+                    <h3 class="font-bold text-lg text-brand-dark">
+                        Syahrul Ramadhan
+                    </h3>
+
+                    <p class="text-xs font-bold text-brand-coral uppercase mt-1 mb-3">
+                        Finance / Keuangan
+                    </p>
+
+                    <p class="text-sm text-stone-500">
+                        Mengelola keuangan, biaya produksi, dan harga produk.
                     </p>
                 </div>
 
-                <!-- Marketing -->
-                <div class="bg-brand-cream p-8 rounded-3xl border border-brand-softBorder text-center hover:shadow-lg transition-shadow">
-                    <div class="w-24 h-24 rounded-full bg-amber-600 text-white mx-auto flex items-center justify-center font-bold text-2xl mb-4 shadow-md">
+                <div class="product-card p-8 text-center">
+                    <div class="w-24 h-24 rounded-full bg-amber-600 text-white mx-auto flex items-center justify-center font-bold text-2xl mb-4">
                         RS
                     </div>
-                    <h3 class="font-bold text-lg text-brand-dark">Rayhan Syaqib Aqil</h3>
-                    <p class="text-xs font-bold text-brand-coral uppercase tracking-wider mt-1 mb-3">Marketing & Promosi</p>
-                    <p class="text-xs text-stone-500 leading-relaxed">
-                        Merancang strategi pemasaran kreatif, branding digital, dan menjaga keterikatan erat dengan pelanggan.
+
+                    <h3 class="font-bold text-lg text-brand-dark">
+                        Rayhan Syaqib Aqil
+                    </h3>
+
+                    <p class="text-xs font-bold text-brand-coral uppercase mt-1 mb-3">
+                        Marketing & Promosi
+                    </p>
+
+                    <p class="text-sm text-stone-500">
+                        Mengelola promosi dan komunikasi dengan pelanggan.
                     </p>
                 </div>
 
@@ -461,51 +505,65 @@
         </div>
     </section>
 
-    <!-- HUBUNGI KAMI & KONTAK -->
-    <section id="kontak" class="py-20 bg-brand-cream border-t border-brand-softBorder">
+
+    <!-- KONTAK -->
+    <section id="kontak" class="py-20 food-pattern border-t border-brand-softBorder">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
             <div class="grid md:grid-cols-2 gap-12 items-center">
-                
+
                 <div class="space-y-6">
-                    <span class="text-brand-coral font-semibold text-sm uppercase tracking-wider">Kontak Resmi</span>
-                    <h2 class="font-serif text-3xl font-bold text-brand-dark">Mari Terhubung Dengan WAKAMONO</h2>
+                    <span class="text-brand-coral font-semibold text-sm uppercase tracking-wider">
+                        Kontak Resmi
+                    </span>
+
+                    <h2 class="font-serif text-3xl font-bold text-brand-dark">
+                        Mari Terhubung dengan WAKAMONO
+                    </h2>
+
                     <p class="text-stone-600 text-sm leading-relaxed">
-                        Ada pertanyaan, saran, atau pemesanan skala besar untuk acara kantor dan pesta? Hubungi kami langsung.
+                        Ada pertanyaan atau ingin memesan bola keju kentang?
+                        Hubungi kami melalui WhatsApp.
                     </p>
 
-                    <div class="space-y-4 pt-2">
-                        <a href="https://wa.me/62882018675918" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-brand-softBorder hover:border-brand-coral transition-colors">
-                            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">
-                                <i data-lucide="phone-call" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-bold text-brand-dark text-sm">WhatsApp Resmi</h5>
-                                <p class="text-xs text-stone-500">+62 882-0186-75918</p>
-                            </div>
-                        </a>
+                    <a href="https://wa.me/62882018675918"
+                        target="_blank" rel="noopener noreferrer"
+                        class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-brand-softBorder hover:border-brand-coral">
 
-                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-brand-softBorder">
-                            <div class="w-12 h-12 rounded-xl bg-orange-100 text-brand-coral flex items-center justify-center font-bold">
-                                <i data-lucide="calendar" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h5 class="font-bold text-brand-dark text-sm">Tanggal Berdiri</h5>
-                                <p class="text-xs text-stone-500">16 Oktober 2026</p>
-                            </div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                            <i data-lucide="phone-call" class="w-6 h-6"></i>
                         </div>
-                    </div>
+
+                        <div>
+                            <h5 class="font-bold text-brand-dark text-sm">
+                                WhatsApp Resmi
+                            </h5>
+                            <p class="text-xs text-stone-500">
+                                +62 882-0186-75918
+                            </p>
+                        </div>
+                    </a>
                 </div>
 
-                <!-- Banner Callout Box -->
-                <div class="bg-brand-dark text-white p-8 sm:p-10 rounded-3xl shadow-2xl relative overflow-hidden">
+                <div class="cheese-banner p-8 sm:p-10 shadow-2xl relative overflow-hidden">
                     <div class="relative z-10 space-y-4">
-                        <span class="text-brand-coral font-bold text-xs uppercase tracking-widest">Special Drink Offer</span>
-                        <h3 class="font-serif text-2xl sm:text-3xl font-bold">Siap Menikmati Kesegaran Hari Ini?</h3>
-                        <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
-                            Pesan minuman Jelly Susu rasa favoritmu sekarang dan dapatkan kesegaran istimewa dari WAKAMONO!
+                        <span class="text-amber-200 font-bold text-xs uppercase tracking-widest">
+                            Special Snack Offer
+                        </span>
+
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold">
+                            Camilan Gurih untuk Hari Ini
+                        </h3>
+
+                        <p class="text-sm text-stone-200 leading-relaxed">
+                            Jangan lewatkan bola keju kentang favoritmu.
+                            Pesan sekarang dan nikmati kelezatannya!
                         </p>
-                        <a href="https://wa.me/62882018675918?text=Halo%20WAKAMONO,%20saya%20ingin%20bertanya%20mengenai%20produk%20minuman%20Jelly%20Susu" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-brand-coral hover:bg-brand-coralHover text-white font-bold text-xs rounded-full shadow-md transition-all">
-                            <span>Chat Whatsapp Sekarang</span>
+
+                        <a href="https://wa.me/62882018675918?text=Halo%20WAKAMONO%2C%20saya%20ingin%20memesan%20bola%20keju%20kentang."
+                            target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 px-6 py-3 bg-brand-coral hover:bg-brand-coralHover text-white font-bold text-sm rounded-full">
+                            Pesan via WhatsApp
                             <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
                     </div>
@@ -515,44 +573,47 @@
         </div>
     </section>
 
+
     <!-- FOOTER -->
-    <footer class="bg-brand-dark text-stone-300 py-12 border-t border-stone-800">
+    <footer class="bg-brand-dark text-stone-300 py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pb-8 border-b border-stone-800">
-                <a href="#" class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-brand-cream rounded-xl p-1 flex items-center justify-center">
-                        <svg viewBox="0 0 100 80" class="w-full h-full text-brand-dark fill-current">
-                            <circle cx="25" cy="18" r="8"/>
-                            <circle cx="50" cy="18" r="8"/>
-                            <circle cx="75" cy="18" r="8"/>
-                            <path d="M 10 70 V 44 C 10 30, 38 30, 38 44 V 70 C 38 70, 38 44, 50 44 C 62 44, 62 70, 62 70 C 62 70, 62 44, 75 44 C 88 44, 88 70, 88 70 H 76 V 46 C 76 40, 70 40, 65 44 V 70 H 53 V 46 C 53 40, 47 40, 42 44 V 70 Z" />
-                        </svg>
-                    </div>
-                    <span class="font-bold text-xl text-white tracking-widest font-sans">WAKAMONO</span>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pb-6 border-b border-stone-700">
+
+                <a href="#beranda" class="flex items-center gap-3">
+                    <img src="logo.jpeg" width="45" alt="Logo WAKAMONO"
+                        class="logo">
+
+                    <span class="font-bold text-xl text-white tracking-widest">
+                        WAKAMONO
+                    </span>
                 </a>
-                <p class="text-xs text-stone-400 italic text-center">
+
+                <p class="text-xs text-stone-300 italic text-center">
                     "Kreasi sederhana untuk yang teristimewa"
                 </p>
-                <div class="flex space-x-4">
-                    <a href="https://wa.me/62882018675918" target="_blank" class="w-9 h-9 rounded-full bg-stone-800 flex items-center justify-center text-stone-300 hover:bg-brand-coral hover:text-white transition-colors">
-                        <i data-lucide="phone" class="w-4 h-4"></i>
-                    </a>
-                </div>
+
+                <a href="https://wa.me/62882018675918"
+                    target="_blank" rel="noopener noreferrer"
+                    aria-label="WhatsApp WAKAMONO">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                </a>
             </div>
 
-            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-stone-500 gap-4">
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-stone-400 gap-4">
                 <p>&copy; 2026 WAKAMONO. All rights reserved.</p>
-                <p>Est. 16 Oktober 2026</p>
+                <p>Bola Keju Kentang</p>
             </div>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT LOGIC -->
+
+    <!-- JAVASCRIPT -->
     <script>
-        // Initialize Lucide Icons
+        // Inisialisasi ikon
         lucide.createIcons();
 
-        // Mobile Menu Toggle
+        // Menu mobile
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -567,59 +628,100 @@
             });
         });
 
-        // Order Quantities State
+        // Harga produk
         const prices = {
             item1: 8000,
             item2: 10000,
             item3: 2000
         };
 
+        // Jumlah awal produk
         const quantities = {
             item1: 0,
             item2: 0,
             item3: 0
         };
 
+        // Mengubah jumlah produk
         function updateQty(itemKey, change) {
-            quantities[itemKey] = Math.max(0, quantities[itemKey] + change);
-            document.getElementById(`qty-${itemKey}`).innerText = quantities[itemKey];
+            quantities[itemKey] = Math.max(
+                0,
+                quantities[itemKey] + change
+            );
+
+            document.getElementById(`qty-${itemKey}`).innerText =
+                quantities[itemKey];
+
             calculateTotal();
         }
 
+        // Menghitung total harga
         function calculateTotal() {
-            let total = (quantities.item1 * prices.item1) + 
-                        (quantities.item2 * prices.item2) + 
-                        (quantities.item3 * prices.item3);
-            
-            document.getElementById('totalPrice').innerText = 'Rp ' + total.toLocaleString('id-ID');
+            const total =
+                (quantities.item1 * prices.item1) +
+                (quantities.item2 * prices.item2) +
+                (quantities.item3 * prices.item3);
+
+            document.getElementById('totalPrice').innerText =
+                'Rp ' + total.toLocaleString('id-ID');
+
             return total;
         }
 
-        function sendWhatsAppOrder(e) {
-            e.preventDefault();
-            const name = document.getElementById('custName').value.trim();
-            const address = document.getElementById('custAddress').value.trim();
+        // Mengirim pesanan ke WhatsApp
+        function sendWhatsAppOrder(event) {
+            event.preventDefault();
+
+            const name =
+                document.getElementById('custName').value.trim();
+
+            const address =
+                document.getElementById('custAddress').value.trim();
+
             const total = calculateTotal();
 
-            if (quantities.item1 === 0 && quantities.item2 === 0 && quantities.item3 === 0) {
-                alert('Silakan pilih minimal 1 varian produk terlebih dahulu.');
+            if (
+                quantities.item1 === 0 &&
+                quantities.item2 === 0 &&
+                quantities.item3 === 0
+            ) {
+                alert('Silakan pilih minimal satu produk terlebih dahulu.');
                 return;
             }
 
-            let orderText = `Halo WAKAMONO, saya ingin memesan:\n\n`;
-            if (quantities.item1 > 0) orderText += `- Original Jelly Susu: ${quantities.item1} cup\n`;
-            if (quantities.item2 > 0) orderText += `- Mangga Jelly Susu: ${quantities.item2} cup\n`;
-            if (quantities.item3 > 0) orderText += `- Topping Keju Parut: ${quantities.item3} porsi\n`;
-            
-            orderText += `\n*Total Pembayaran:* Rp ${total.toLocaleString('id-ID')}\n`;
-            orderText += `*Nama Pemesan:* ${name}\n`;
-            orderText += `*Alamat/Lokasi:* ${address}\n\n`;
-            orderText += `Mohon diproses, terima kasih!`;
+            let orderText =
+                'Halo WAKAMONO, saya ingin memesan bola keju kentang:\n\n';
 
-            const phone = "62882018675918";
-            const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(orderText)}`;
+            if (quantities.item1 > 0) {
+                orderText +=
+                    `- Bola Keju Original: ${quantities.item1} porsi\n`;
+            }
+
+            if (quantities.item2 > 0) {
+                orderText +=
+                    `- Bola Keju Pedas: ${quantities.item2} porsi\n`;
+            }
+
+            if (quantities.item3 > 0) {
+                orderText +=
+                    `- Extra Cheese: ${quantities.item3} tambahan\n`;
+            }
+
+            orderText +=
+                `\nTotal Pembayaran: Rp ${total.toLocaleString('id-ID')}\n`;
+
+            orderText += `Nama Pemesan: ${name}\n`;
+            orderText += `Alamat/Lokasi: ${address}\n\n`;
+            orderText += 'Mohon diproses. Terima kasih!';
+
+            const phone = '62882018675918';
+
+            const waUrl =
+                `https://wa.me/${phone}?text=${encodeURIComponent(orderText)}`;
+
             window.open(waUrl, '_blank');
         }
     </script>
+
 </body>
 </html>
